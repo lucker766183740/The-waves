@@ -1,0 +1,1 @@
+<view class="container"><text class="title">这是一个组件</text><view>{{'接受组件传值 '+sub+''}}</view><view><button type="primary" plain="{{true}}" size="mini">查看</button></view></view>

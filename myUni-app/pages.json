@@ -1,0 +1,39 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "详情页"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText":"demo",
+		"navigationBarBackgroundColor": "#DD524D",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color":"#333333",
+		"selectedColor":"#1296db",
+		"backgroundColor":"#F1F1F1",
+		"list":[{
+			"text":"首页",
+			"pagePath":"pages/home/home",
+			"iconPath":"static/image/shouye1.png",
+			"selectedIconPath":"static/image/home-select.png"
+		},
+		{
+			"text":"消息页",
+			"pagePath":"pages/message/message",
+			"iconPath":"static/image/xiaoxi_1.png",
+			"selectedIconPath":"static/image/xiaoxi.png"
+		}]
+	}
+}

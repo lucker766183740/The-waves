@@ -1,0 +1,1 @@
+<view class="container"><view class="home_title">this is home</view><view class="components"><top-bar vue-id="1da55560-1" sub="{{t}}" data-event-opts="{{[['^tirget',[['getdata']]]]}}" bind:tirget="__e" bind:__l="__l"></top-bar></view><view style="color:#4CD964;">{{''+a+''}}</view><view>没有办法现在我必须写点什么，否则得画我得代码根本就提交不上去呀</view></view>
