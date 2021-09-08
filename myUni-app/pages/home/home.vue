@@ -9,9 +9,7 @@
 		<view style="color: #4CD964;">
 			{{a}}
 		</view>
-		<view class="">
-			没有办法现在我必须写点什么，否则得画我得代码根本就提交不上去呀
-		</view>
+		<button type="default" @click="timeData"> 查看 </button>
 	</view>
 </template>
 <script>
@@ -27,9 +25,54 @@
 		topBar
 	},
 		methods: {
-			getdata(e){
-				console.log(e)
-				this.a = e
+			getdata(sub){
+				console.log(sub)
+				this.a = sub
+			},
+			timeData(){
+				this.oldYear = 2021
+				this.oldMonth = 7
+				this.day = 22
+				this.year = new Date().getFullYear()
+				this.month = new Date().getMonth() + 1
+				this.countDay = 0
+				this.newCountDay = 0
+					if(this.year == this.oldYear){
+						uni.showModal({
+							title:'提示',
+							content:`亲爱的小鹿，你本月（${this.month}月）亲戚时间是` +this.fn(this.month) + '日' + ' , 请注意饮食哦'
+						})
+					}else{
+						uni.showModal({
+							title:'提示',
+							content:`亲爱的小鹿，你本月（${this.month}月）亲戚时间是` + this.fnn(this.month , this.year) + '日' + ' , 请注意饮食哦' 
+						})
+						// let sa = alert(`亲爱的小鹿，你本月（${month}月）亲戚时间是` + fnn(month , year) + '日' + ' , 请注意饮食哦' )
+					}
+			},
+			fn(month){
+			  if(month == this.oldMonth){
+			    let b = this.newCountDay-(this.countDay + this.day)
+			    return Math.abs(b)
+			  }
+			  this.countDay += 28
+			  let a = new Date(this.year , month , 0).getDate()
+			  this.newCountDay += a
+			  return  this.fn( month - 1 ) 
+			},
+			fnn(month , year){
+			  if(month == this.oldMonth && this.year == this.oldYear){
+			    let b = this.newCountDay-(this.countDay + this.day)
+			    return Math.abs(b)
+			  }
+			  if(month == 0){
+			    this.month = 12
+			    this.year--
+			  }
+			  this.countDay += 28
+			  let a = new Date(this.year , this.month , 0).getDate()
+			  this.newCountDay += a
+			  return  this.fnn( this.month - 1 , this.year) 
 			}
 		}
 	}

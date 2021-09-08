@@ -1,6 +1,10 @@
 <template>
 	<view class="container">
-		<text style="text-align: center;">this is message [瀑布流]</text>
+		<view style="text-align: center;">
+			<text>[ 瀑布流布局 ]</text>
+		</view>
+		<view style="height: 20px;"></view>
+		<button type="primary" @click="uploadImage">上传图片</button>
 		<view class="image_container">
 			<view class="left" >
 				<template v-for="item in left">
@@ -46,7 +50,6 @@
 		},
 		methods: {
 			loadImage(e){
-				console.log(e)
 				this.count++
 				let owidth = e.detail.width
 				let oheight = e.detail.height
@@ -64,7 +67,16 @@
 						this.right.push(this.imageList[this.count])
 					}
 				}
-			}
+			},
+			//上传图片
+			uploadImage(){
+				uni.chooseImage({
+					count:9,
+					success(res) {
+						console.log(res)
+					}
+				})
+			},
 		}
 	}
 </script>

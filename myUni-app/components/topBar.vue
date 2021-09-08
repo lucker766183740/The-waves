@@ -1,18 +1,15 @@
-<template name="topBar">
+<template>
 	<view class="container">
 		<text class="title">这是一个组件</text>
+		<button type="default"></button>
 		<view class="">
 			接受组件传值 {{sub}}
-		</view>
-		<view class="">
-			<button type="primary" plain size="mini" >查看</button>
 		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		name:"topBar",
 		data() {
 			return {
 				
